@@ -1,13 +1,6 @@
 
 
-
-#[macro_use]
-extern crate serde_derive;
-extern crate serde;
-extern crate serde_json;
-
-
-pub mod data;
+pub mod readinginstatic;
 
 //Ignore mod test it was auto generated
 #[cfg(test)]

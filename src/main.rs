@@ -1,11 +1,31 @@
-
 extern crate gamedata;
+#[macro_use]
+extern crate lazy_static;
+
+
+lazy_static! {
+    pub static ref GAMEDATA:&'static str = "I am a test STrings";
+}
 
 fn main(){
    
-    let data = gamedata::data::load_data("/home/wolf/Documents/rust/gamedata/src/assets/data.json".to_string());
+    println!("Game Data:{}",*GAMEDATA);
+    let obj = gamedata::readinginstatic::readinginstatic{structure:"working".to_string()};
+    obj.print_static();
 
-    println!("Frames per second:{}",data.fps);
-    println!("Width:{}",data.width);
-    println!("Height:{}",data.height);
+   
 }
+
+mod test_stuff{
+
+    use ::GAMEDATA;
+    fn printthing(){
+        println!("herenow:{}",*GAMEDATA);
+    }
+    
+}
+
+
+ 
+
+
